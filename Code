@@ -1,0 +1,154 @@
+//
+//  main.m
+//  example
+//
+//  Created by english on 2023-05-23.
+//
+
+#import <Foundation/Foundation.h>
+    
+struct Etudiant{
+    NSString *nom;
+    NSString *Nom_de_famile;
+    NSInteger age;
+    float gpa;
+};
+
+
+struct Etudiant2{
+    id ID;
+    NSString *Addresse;
+    NSString *telephone;
+    BOOL gendre;
+};
+
+int main(int argc, const char * argv[]) {
+    /*
+     @autoreleasepool {
+     //Here we create an object for console operation
+     NSFileHandle *input = [NSFileHandle fileHandleWithStandardInput];
+     //simply prints a message to console
+     
+     //***************************STRING*********************************
+     NSLog(@"Enter a string");
+     //Prepares a memory location (of any type)
+     //Note that since the type is not known we define with NSData
+     NSData *inputData = [input availableData];
+     //The, we convert the type of the input to string
+     //We should also define the encoding policy
+     NSString *inputString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+     
+     NSString *trimmedInputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+     
+     
+     
+     //***************************INTEGER*********************************
+     
+     //Here we print another mesage into console
+     NSLog(@"Enter an integer: ");
+     
+     //This frees the input objet
+     inputData = [input availableData];
+     
+     //This line reads an input from console (whatever type it has)
+     NSString *integerString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+     
+     //This  trims the input string and decompose it into multiplie characters
+     NSString *trimmedInputInteger = [integerString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+     //This line FINALY converts the string into integer
+     NSInteger inputInteger = [trimmedInputString integerValue];
+     
+     //***************************FLOAT*********************************
+     
+     NSLog(@"Enter a float");
+     
+     //Another time we free the inputData object
+     inputData = [input availableData];
+     
+     //This creates a string variable which later on we change it to float
+     NSString*floatString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+     
+     //This is for trimming the input variable
+     NSString *trimmedFloatString = [floatString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+     
+     //Finally, we convert the input string into float
+     float floatValue = [trimmedFloatString floatValue];
+     
+     //***************************Booleans*********************************
+     
+     //again we print something into console
+     NSLog(@"Enter a boolean value: ");
+     
+     //we release/free memory for inptData
+     inputData = [input availableData];
+     
+     
+     //Define a temporary string variable (later we change it)
+     NSString *booleanString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+     
+     //we trim the string and decompose into characters
+     NSString *trimmeBoolString = [booleanString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+     
+     //finally we convert it into Bool
+     BOOL boolValue = [trimmeBoolString boolValue];
+     
+     //***************************Booleans*********************************
+     
+     NSLog(@"Enter a character");
+     inputData = [input availableData];
+     NSString *charInputString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+     NSString *trimmedInputChar = [charInputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+     const char *charInput = [trimmedInputChar UTF8String];
+     char firstChar = charInput[0];
+     
+     NSLog(@"These are the entered values: ");
+     NSLog(@"Votre String est: %@", trimmedInputString);
+     NSLog(@"Votre integer est: %d", inputInteger);
+     NSLog(@"Votre Float est: %f", floatValue);
+     NSLog(@"Votre Boolean est: %d", boolValue);
+     NSLog(@"Votre Character est: %c", firstChar);
+     */
+    /*
+     for (int i=0; i < 10; i++){
+     NSLog(@"The index is %d", i);
+     
+     */
+    
+    //NSArray *monTableau = @[@"Felix_V", @"Alex", @"Mina", @"Martin"];
+    //NSInteger length = [monTableau count];
+    /*
+    for (int i=0; i<length; i++){
+        NSLog(@"%d is %@", i, monTableau[i]);
+    }
+    
+    //This similar to foreach loop in C#
+    for (NSString *item in monTableau){
+        NSLog(@"%@", item);
+     */
+    
+    struct Etudiant etu;
+    etu.nom = @"Zach";
+    etu.Nom_de_famile = @"Excellent";
+    etu.age = 19;
+    etu.gpa = 3.9;
+    
+    NSLog(@"Nom est: %@", etu.nom);
+    NSLog(@"Nom de famille est: %@", etu.Nom_de_famile);
+    NSLog(@"Age est %ld", etu.age);
+    NSLog(@"GPA est %f", etu.gpa);
+    
+    
+    struct Etudiant2 per;
+    per.ID = @"1234";
+    per.Addresse = @"3730 Rue couviller";
+    per.telephone = @"4385141258";
+    per.gendre = ;
+    
+    NSLog(@"ID: %@", etu.nom);
+    NSLog(@"Addresse: %@", etu.Nom_de_famile);
+    NSLog(@"telephone est: %@", etu.age);
+    NSLog(@"Gendre est: %f", etu.gpa);
+
+    return 0;
+}
+ 
