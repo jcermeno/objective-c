@@ -1,0 +1,60 @@
+//
+//  main.m
+//  code_mai_30
+//
+//  Created by english on 2023-05-30.
+//
+
+#import <Foundation/Foundation.h>
+/*
+struct Etudiant{
+    NSString *nom;
+    NSInteger id;
+}
+*/
+
+
+typedef struct{
+    NSString *nom;
+    NSInteger age;
+    BOOL gender;
+} Etudiant;
+
+
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        NSMutableArray *structArray = [[NSMutableArray alloc] init];
+        NSLog(@"Enter votre nom: ");
+        char inputString[100];
+        scanf("%s", inputString); //Permetre lire un string avec maximum de 100 characters
+        NSString *stringNom = [NSString stringWithCString:inputString encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"Enter votre age: ");
+        NSInteger age;
+        scanf("%ld", &age);
+        
+        NSLog(@"0 for Female and 1 for Male: ");
+        BOOL gender;
+        scanf("%d", &gender);
+        
+        //On top we define the array, the struct but we did not
+        //linked them, the below line of the code, links the struct
+        // of Etudiant to the array which we named structutArray
+        
+        [structArray addObject:[NSValue valueWithBytes:&structArray objCType:@encode(Etudiant)]];
+        
+        //the bellow code is for having acces to an object values
+        NSValue *structValues = [structArray firstObject];
+        Etudiant retriveStruct;
+        [structValues getValue:&retriveStruct];
+        
+        //print into console
+        
+        NSLog(@"Nom: %@", retriveStruct.nom);
+        NSLog(@"Age: %ld", retriveStruct.age);
+        NSLog(@"Gender: %@", retriveStruct.gender ? @"Male" : @"Female");
+        
+    }
+    return 0;
+}
